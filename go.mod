@@ -1,4 +1,4 @@
-module github.com/R3l3ntl3ss/Meme_Api
+module github.com/drhax9908/Meme_Api
 
 go 1.13
 
