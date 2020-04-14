@@ -1,9 +1,9 @@
 package server
 
 import (
-	"github.com/R3l3ntl3ss/Meme_Api/controllers/gimme"
-	"github.com/R3l3ntl3ss/Meme_Api/libraries/reddit"
-	"github.com/R3l3ntl3ss/Meme_Api/libraries/redis"
+	"github.com/drhax9908/Meme_Api/controllers/gimme"
+	"github.com/drhax9908/Meme_Api/libraries/reddit"
+	"github.com/drhax9908/Meme_Api/libraries/redis"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
