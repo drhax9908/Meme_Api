@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"log"
 
-	"github.com/R3l3ntl3ss/Meme_Api/models"
+	"github.com/drhax9908/Meme_Api/models"
 
-	"github.com/R3l3ntl3ss/Meme_Api/models/reddit"
+	"github.com/drhax9908/Meme_Api/models/reddit"
 )
 
 // GetNPosts : Get (N) no. of posts from Reddit with Subreddit Name and Limit
