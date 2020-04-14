@@ -1,6 +1,6 @@
 FROM golang:1.13.5
 
-WORKDIR /go/src/github.com/R3l3ntl3ss/Meme_Api
+WORKDIR /go/src/github.com/drhax9908/Meme_Api
 
 COPY . .
 
