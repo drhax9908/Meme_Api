@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/R3l3ntl3ss/Meme_Api/controllers/utils"
-	"github.com/R3l3ntl3ss/Meme_Api/models/response"
+	"github.com/drhax9908/Meme_Api/controllers/utils"
+	"github.com/drhax9908/Meme_Api/models/response"
 	"github.com/gin-gonic/gin"
 )
 
