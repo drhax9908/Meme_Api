@@ -27,7 +27,7 @@ func (r *Reddit) Init() {
 	r.ClientID = clientID
 	r.ClientSecret = clientSecret
 
-	r.UserAgent = "MEME_API"
+	r.UserAgent = "MEME_API_drhax9908_test"
 
 	accessToken := r.GetAccessToken()
 
