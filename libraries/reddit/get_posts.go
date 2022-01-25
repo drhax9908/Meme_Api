@@ -8,7 +8,6 @@ import (
 	rm "Meme_Api/libraries/reddit/models"
 	"Meme_Api/models"
 
-	"github.com/getsentry/sentry-go"
 )
 
 // GetNPosts : Get (N) no. of posts from Reddit with Subreddit Name and Limit
@@ -34,7 +33,6 @@ func GetNPosts(subreddit string, count int) ([]models.Meme, rm.CustomRedditError
 			Message: "Reddit is unreachable at the moment",
 		}
 
-		sentry.CaptureMessage("Reddit is Down!!")
 		return nil, res
 	}
 
@@ -63,14 +61,12 @@ func GetNPosts(subreddit string, count int) ([]models.Meme, rm.CustomRedditError
 			Message: "Unknown error while getting posts. Please try again",
 		}
 
-		sentry.CaptureMessage(string(body))
 		return nil, res
 	}
 
 	var redditResponse rm.Response
 
 	if err := json.Unmarshal(body, &redditResponse); err != nil {
-		sentry.CaptureException(err)
 		log.Println("Error while Parsing Reddit Response")
 
 		res := rm.CustomRedditError{
