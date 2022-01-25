@@ -3,7 +3,6 @@ package gimme
 import (
 	"net/http"
 
-	"github.com/getsentry/sentry-go"
 	"github.com/gin-gonic/gin"
 
 	"Meme_Api/data"
@@ -38,9 +37,7 @@ func GetOneRandomMeme(c *gin.Context) {
 		freshMemes = utils.RemoveNonImagePosts(freshMemes)
 
 		// Write sub posts to Cache
-		if err := redis.WritePostsToCache(sub, freshMemes); err != nil {
-			sentry.CaptureException(err)
-		}
+		redis.WritePostsToCache(sub, freshMemes)
 
 		// Set Memes to Fresh Memes
 		memes = freshMemes
