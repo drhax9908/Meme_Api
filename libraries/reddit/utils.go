@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/getsentry/sentry-go"
 )
 
 // EncodeCredentials : Return base64 Encoded client ID and Secret required for authentication
@@ -32,7 +31,6 @@ func MakeGetRequest(url string) (responseBody []byte, errorCode int) {
 	res, err := http.DefaultClient.Do(req)
 
 	if err != nil {
-		sentry.CaptureException(err)
 		log.Println("Error while making request", err)
 		return nil, res.StatusCode
 	}
@@ -43,7 +41,6 @@ func MakeGetRequest(url string) (responseBody []byte, errorCode int) {
 	body, err := ioutil.ReadAll(res.Body)
 
 	if err != nil {
-		sentry.CaptureException(err)
 		log.Println("Error while Parsing Response Body")
 		return nil, res.StatusCode
 	}
